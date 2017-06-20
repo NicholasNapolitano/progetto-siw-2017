@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>Ricerca Quadri</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+</h:head>
+<h:body
+	background="http://it.wallpapersja.com/wp-content/uploads/sites/15/2016/06/Campagna-Widescreen-sfondi-1366x768.jpg">
+	<f:view>
+		<!-- Menu di testa -->
+		<ui:include src="header.xhtml" />
+		<div align="center">
+			<h1>
+				<strong>Seleziona la ricerca quadri</strong>
+			</h1>
+			<h:form>
+				<table class="table table-bordered">
+					<tr>
+						<th><strong>Tutti</strong></th>
+						<th><strong>Per Autore</strong></th>
+						<th><strong>Per Anno</strong></th>
+						<th><strong>Per Tecnica</strong></th>
+					</tr>
+					<tr>
+						<td><em><strong><h:commandLink class="active"
+										action="#{paintingController.visualizzaQuadri}"
+										value="Tutti i Quadri" /></strong></em></td>
+						<td><em><strong><h:commandLink class="active"
+										action="#{paintingController.selezionaAutore}"
+										value="Ricerca quadri per autore" /></strong></em></td>
+						<td><em><strong><h:commandLink class="active"
+										action="#{paintingController.selezionaAnno}"
+										value="Ricerca quadro per anno" /></strong></em></td>
+						<td><em><strong><h:commandLink class="active"
+										action="#{paintingController.selezionaTecnica}"
+										value="Ricerca quadro per tecnica" /></strong></em></td>
+					</tr>
+				</table>
+			</h:form>
+		</div>
+	</f:view>
+</h:body>
+</html>

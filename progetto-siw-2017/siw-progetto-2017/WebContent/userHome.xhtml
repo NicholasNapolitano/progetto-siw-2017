@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>User Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+</h:head>
+<h:body
+	background="http://www.sfondifree.it/sfondihd/wp-content/uploads/2015/11/Sfondo-mano-e-auto-fantasy.jpg">
+	<f:view>
+		<ui:include src="header.xhtml" />
+		<div align="center" class="text-primary">
+			<h1>
+				Benvenuto <strong>${userController.currentUser.nome}
+					${userController.currentUser.cognome}</strong>
+			</h1>
+			<h2>Informazioni</h2>
+			<address>
+				<strong>${userController.currentUser.address.via}
+					${userController.currentUser.address.codicePostale}
+					${userController.currentUser.address.comune},
+					(${userController.currentUser.address.provincia})
+					${userController.currentUser.address.nazione} </strong> <abbr
+					title="Telefono"><strong>Tel:</strong></abbr><strong>
+					${userController.currentUser.numeroTelefono}</strong>
+			</address>
+			<div class="text-primary">
+				<strong>Data di Nascita: <h:outputText
+						value="#{userController.currentUser.dataNascita}">
+						<f:convertDateTime dateStyle="medium" locale="it_IT" type="date" />
+					</h:outputText></strong>
+			</div>
+			<div class="text-primary">
+				<strong>Data di Registrazione: <h:outputText
+						value="#{userController.currentUser.dataRegistrazione.time}">
+						<f:convertDateTime dateStyle="medium" locale="it_IT" type="both"
+							timeZone="Europe/Rome" />
+					</h:outputText></strong>
+			</div>
+			<h3>
+				<strong><em>Scegli un'operazione sulla barra superiore
+						per iniziare!</em></strong>
+			</h3>
+		</div>
+	</f:view>
+</h:body>
+</html>
